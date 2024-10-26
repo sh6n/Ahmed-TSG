@@ -1,0 +1,187 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+function sendnotif(title, message)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title,
+        Text = message,
+        Icon = "rbxassetid://12319510751",
+        Duration = 3,
+    })
+    end
+
+local Window = Fluent:CreateWindow({
+    Title = "The Survival Game " .. Fluent.Version,
+    SubTitle = "by Glauque",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+
+--// Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Home = Window:AddTab({ Title = "Home", Icon = "home" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "user" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+
+    --// Home ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local InfoSection = Tabs.Home:AddSection("Information") -- Section
+
+    Tabs.Home:AddParagraph({
+        Title = "For Ahmed, by Youssef",
+        Content = "\nThis sucks but yeah, it's still better than nothing."
+    })
+
+    --// Player -------------------------------------------------------------------------------------------------------------------------------------------------
+
+    -------------------------------------- Movement Section --------------------------------------
+    
+    local MovementSection = Tabs.Player:AddSection("Movement") -- Section
+    
+    ------ CFrame Speed
+    
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+    repeat
+        wait()
+    until LocalPlayer.Character
+
+    local UserInputService = game:GetService("UserInputService")
+    local RunService = game:GetService("RunService")
+
+    SpeedMultiplier = 0.1
+    local maxSpeed = 43
+
+    local function updateCFrameSpeed()
+        local speedValue = math.min(SpeedMultiplier, maxSpeed)
+        LocalPlayer.Character.HumanoidRootPart.CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame + LocalPlayer.Character.Humanoid.MoveDirection * speedValue
+    end
+
+    RunService.Stepped:Connect(function()
+        if SpeedMultiplier > 0 then
+            updateCFrameSpeed()
+        end
+    end)
+
+    local CFrameSlider = MovementSection:AddSlider("Speed", {
+        Title = "Speed",
+        Description = "",
+        Default = 0,
+        Min = 0,
+        Max = 43,
+        Rounding = 0,
+        Callback = function(value)
+            SpeedMultiplier = value / 100
+        end
+    })
+
+    ------ Infinite Stamina
+
+    local StamToggle = Tabs.Player:AddToggle("Toggle_Stam", {Title = "Infinite Stamina", Default = false })
+
+    StamToggle:OnChanged(function()
+        game.Players.LocalPlayer.Character.stamina.Disabled = Options.Toggle_Stam.Value
+    end)
+
+    Options.Toggle_Stam:SetValue(false) -- Default value
+
+    ------ Infinite Bag
+    
+    local BagToggle = Tabs.Player:AddToggle("Toggle_Bag", {Title = "Infinite Bag", Default = false })
+
+    BagToggle:OnChanged(function()
+        game.Players.LocalPlayer:SetAttribute("InfiniteBag", Options.Toggle_Bag.Value)       
+    end)
+
+    Options.Toggle_Bag:SetValue(false)
+
+    -------------------------------------- Immunity Section --------------------------------------
+    
+    local ImmunitySection = Tabs.Player:AddSection("Immunity") -- Section
+
+    ------ No Fall Damage
+
+    local FallToggle = Tabs.Player:AddToggle("Toggle_Fall", {Title = "No Fall Damage", Default = false })
+
+    FallToggle:OnChanged(function()
+        game.Players.LocalPlayer.Character.fallDamage.Disabled = Options.Toggle_Fall.Value
+    end)
+
+    Options.Toggle_Fall:SetValue(false) -- Default value
+
+    -------------------------------------- Extra Section --------------------------------------
+
+    local ExtraSection = Tabs.Player:AddSection("Extra") -- Section
+
+    ------ Spawn Position
+    
+    local SpawnPosToggle = Tabs.Player:AddToggle("spawnpos", {Title = "Spawn Position", Default = false })
+
+    SpawnPosToggle:OnChanged(function()
+        game.Players.LocalPlayer:SetAttribute("PickSpawnPosition", Options.spawnpos.Value)
+    end)
+
+    Options.spawnpos:SetValue(false)
+
+    ------ Maximum Zoom Amount
+    
+    local ZoomSlider = Tabs.Player:AddSlider("Slider", {
+        Title = "Zoom Amount",
+        Description = "",
+        Default = 128,
+        Min = 128,
+        Max = 5000,
+        Rounding = 0,
+        Callback = function(Value)
+            game.Players.LocalPlayer.CameraMaxZoomDistance = Value
+        end
+    })
+
+    ZoomSlider:SetValue(128)
+
+end
+
+--// Don't Touch -------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (We dont want configs to save themes, do we ?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- Use case for doing it this way:
+-- A script hub could have themes in a global folder
+-- And game configs in a separate folder per game
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "chaos.lua",
+    Content = "The script has been loaded!",
+    Duration = 1
+})
+
+SaveManager:LoadAutoloadConfig()
