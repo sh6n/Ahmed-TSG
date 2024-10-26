@@ -1,12 +1,196 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
-]]--
+function sendnotif(title, message)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title,
+        Text = message,
+        Icon = "rbxassetid://12319510751",
+        Duration = 3,
+    })
+    end
 
-local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.sub;local v4=string.gsub;local v5=string.rep;local v6=table.concat;local v7=table.insert;local v8=math.ldexp;local v9=getfenv or function() return _ENV;end ;local v10=setmetatable;local v11=pcall;local v12=select;local v13=unpack or table.unpack ;local v14=tonumber;local function v15(v16,v17,...) local v18=1;local v19;v16=v4(v3(v16,5),"..",function(v30) if (v1(v30,2)==81) then local v90=0;while true do if (v90==0) then v19=v0(v3(v30,1,1));return "";end end else local v91=v2(v0(v30,16));if v19 then local v111=v5(v91,v19);v19=nil;return v111;else return v91;end end end);local function v20(v31,v32,v33) if v33 then local v92=(v31/((5 -3)^(v32-1)))%((5 -3)^(((v33-(1 -0)) -(v32-(1 + 0))) + (2 -1))) ;return v92-(v92%(620 -(88 + 467 + (941 -(282 + 595))))) ;else local v93=(933 -(857 + (1711 -(1523 + 114))))^(v32-(569 -(367 + 201))) ;return (((v31%(v93 + v93))>=v93) and (928 -(214 + 713))) or 0 ;end end local function v21() local v34=v1(v16,v18,v18);v18=v18 + 1 ;return v34;end local function v22() local v35=0 + 0 ;local v36;local v37;while true do if (v35==(1 + 0)) then return (v37 * (364 -108)) + v36 ;end if (v35==(1065 -(68 + 997))) then v36,v37=v1(v16,v18,v18 + (1272 -(226 + 1044)) );v18=v18 + (8 -6) ;v35=118 -(32 + 19 + 66) ;end end end local function v23() local v38=957 -(892 + 65) ;local v39;local v40;local v41;local v42;while true do if (v38==(2 -1)) then return (v42 * (31011612 -14234396)) + (v41 * 65536) + (v40 * (469 -213)) + v39 ;end if (v38==(350 -(87 + 263))) then v39,v40,v41,v42=v1(v16,v18,v18 + 3 );v18=v18 + 3 + 1 ;v38=(444 -263) -(67 + 113) ;end end end local function v24() local v43=0 + 0 + 0 ;local v44;local v45;local v46;local v47;local v48;local v49;while true do if (v43==2) then v48=v20(v45,21,31);v49=((v20(v45,32)==(3 -2)) and  -((781 + 172) -(802 + 150))) or (2 -1) ;v43=5 -2 ;end if (v43==(3 + 0)) then if (v48==(997 -((1687 -(201 + 571)) + (1220 -(116 + 1022))))) then if (v47==(0 -(0 -0))) then return v49 * (0 + 0) ;else local v121=0 -0 ;while true do if (v121==(1187 -(1069 + 118))) then v48=1;v46=0 -0 ;break;end end end elseif (v48==(4477 -2430)) then return ((v47==(0 + 0)) and (v49 * ((1 -0)/(0 + 0)))) or (v49 * NaN) ;end return v8(v49,v48-1023 ) * (v46 + (v47/((793 -(368 + 423))^(163 -111)))) ;end if (v43==(18 -(10 + 8))) then v44=v23();v45=v23();v43=3 -2 ;end if (v43==(443 -(416 + 26))) then v46=3 -2 ;v47=(v20(v45,1 + 0 + 0 ,35 -15 ) * ((440 -(145 + 293))^(462 -(44 + 386)))) + v44 ;v43=1488 -(998 + 488) ;end end end local function v25(v50) local v51=1423 -(630 + 793) ;local v52;local v53;while true do if (v51==(10 -7)) then return v6(v53);end if (v51==(0 -0)) then v52=nil;if  not v50 then v50=v23();if (v50==((2910 -2051) -(814 + 45))) then return "";end end v51=2 -1 ;end if (v51==(1 + 1)) then v53={};for v112=1 + 0 , #v52 do v53[v112]=v2(v1(v3(v52,v112,v112)));end v51=888 -(261 + 624) ;end if (v51==(1 -0)) then v52=v3(v16,v18,(v18 + v50) -((5118 -4037) -(1020 + 60)) );v18=v18 + v50 ;v51=2;end end end local v26=v23;local function v27(...) return {...},v12("#",...);end local function v28() local v54=(function() return function(v94,v95,v96,v97,v98,v99,v100,v101,v102) local v103=(function() return 1793 -(1563 + 230) ;end)();local v94=(function() return;end)();local v95=(function() return;end)();while true do if (v103~=(285 -(134 + 151))) then else local v118=(function() return 1665 -(970 + 695) ;end)();while true do if (v118==(0 -0)) then v94=(function() return 1990 -(582 + 1408) ;end)();v95=(function() return nil;end)();v118=(function() return 3 -2 ;end)();end if ((1 -0)==v118) then v103=(function() return 3 -2 ;end)();break;end end end if (v103==(1825 -(1195 + 629))) then while true do if (v94==0) then v95=(function() return v96();end)();if (v97(v95, #",", #"\\")==(0 -0)) then local v125=(function() return 241 -(187 + 54) ;end)();local v126=(function() return;end)();local v127=(function() return;end)();local v128=(function() return;end)();local v129=(function() return;end)();while true do if (v125==(780 -(162 + 618))) then local v131=(function() return 0 + 0 ;end)();while true do if (1~=v131) then else v125=(function() return 1 + 0 ;end)();break;end if (v131==(0 -0)) then v126=(function() return 0 -0 ;end)();v127=(function() return nil;end)();v131=(function() return 1 + 0 ;end)();end end end if (v125~=(1637 -(1373 + 263))) then else local v132=(function() return 1000 -(451 + 549) ;end)();local v133=(function() return;end)();while true do if (v132~=(0 + 0)) then else v133=(function() return 0;end)();while true do if (v133==(1 -0)) then v125=(function() return 2;end)();break;end if (v133~=0) then else local v270=(function() return 0;end)();while true do if (v270==0) then v128=(function() return nil;end)();v129=(function() return nil;end)();v270=(function() return 1;end)();end if (v270==1) then v133=(function() return 1 -0 ;end)();break;end end end end break;end end end if (v125==(1386 -(746 + 638))) then while true do if (v126~= #"{") then else local v134=(function() return 0 + 0 ;end)();while true do if ((1 -0)==v134) then v126=(function() return 343 -(218 + 123) ;end)();break;end if ((1581 -(1535 + 46))==v134) then v129=(function() return {v98(),v98(),nil,nil};end)();if (v127==0) then local v308=(function() return 0;end)();local v309=(function() return;end)();while true do if (v308~=0) then else v309=(function() return 0;end)();while true do if (v309~=0) then else v129[ #"nil"]=(function() return v98();end)();v129[ #"0836"]=(function() return v98();end)();break;end end break;end end elseif (v127== #",") then v129[ #"gha"]=(function() return v99();end)();elseif (v127==2) then v129[ #"-19"]=(function() return v99() -((2 + 0)^16) ;end)();elseif (v127== #"-19") then local v346=(function() return 0;end)();local v347=(function() return;end)();while true do if (v346==(0 + 0)) then v347=(function() return 560 -(306 + 254) ;end)();while true do if (v347==0) then v129[ #"gha"]=(function() return v99() -(2^(1 + 15)) ;end)();v129[ #"?id="]=(function() return v98();end)();break;end end break;end end end v134=(function() return 1;end)();end end end if (v126~=2) then else local v135=(function() return 0;end)();local v136=(function() return;end)();while true do if (v135==(0 -0)) then v136=(function() return 1467 -(899 + 568) ;end)();while true do if (v136==(1 + 0)) then v126=(function() return  #"xxx";end)();break;end if (v136==(0 -0)) then if (v97(v128, #"|", #",")== #"\\") then v129[605 -(268 + 335) ]=(function() return v100[v129[2]];end)();end if (v97(v128,2,292 -(60 + 230) )== #"|") then v129[ #"91("]=(function() return v100[v129[ #"xnx"]];end)();end v136=(function() return 1;end)();end end break;end end end if (v126== #"91(") then if (v97(v128, #"-19", #"nil")~= #"[") then else v129[ #"xnxx"]=(function() return v100[v129[ #"0313"]];end)();end v101[v102]=(function() return v129;end)();break;end if (v126==(572 -(426 + 146))) then local v138=(function() return 0 + 0 ;end)();local v139=(function() return;end)();while true do if (v138~=(1456 -(282 + 1174))) then else v139=(function() return 0;end)();while true do if (v139==(811 -(569 + 242))) then v127=(function() return v97(v95,5 -3 , #"xxx");end)();v128=(function() return v97(v95, #".com",1 + 5 );end)();v139=(function() return 1025 -(706 + 318) ;end)();end if (v139==1) then v126=(function() return  #":";end)();break;end end break;end end end end break;end end end break;end end return v94,v95,v96,v97,v98,v99,v100,v101,v102;end end end;end)();local v55=(function() return function(v104,v105,v106) local v107=(function() return 0;end)();local v108=(function() return;end)();while true do if (v107==(1251 -(721 + 530))) then v108=(function() return 0;end)();while true do if ((1271 -(945 + 326))==v108) then local v124=(function() return 0 -0 ;end)();while true do if (v124==0) then v104[v105-#"<" ]=(function() return v106();end)();return v104,v105,v106;end end end end break;end end end;end)();local v56=(function() return {};end)();local v57=(function() return {};end)();local v58=(function() return {};end)();local v59=(function() return {v56,v57,nil,v58};end)();local v60=(function() return v23();end)();local v61=(function() return {};end)();for v69= #"{",v60 do local v70=(function() return 0;end)();local v71=(function() return;end)();local v72=(function() return;end)();local v73=(function() return;end)();while true do if (v70==(701 -(271 + 429))) then v73=(function() return nil;end)();while true do if (v71==(1 + 0)) then if (v72== #"{") then v73=(function() return v21()~=0 ;end)();elseif (v72==(1502 -(1408 + 92))) then v73=(function() return v24();end)();elseif (v72~= #"xxx") then else v73=(function() return v25();end)();end v61[v69]=(function() return v73;end)();break;end if (v71~=(1086 -(461 + 625))) then else local v123=(function() return 1288 -(993 + 295) ;end)();while true do if (v123==1) then v71=(function() return 1 + 0 ;end)();break;end if (v123==0) then v72=(function() return v21();end)();v73=(function() return nil;end)();v123=(function() return 1;end)();end end end end break;end if (v70==(1171 -(418 + 753))) then v71=(function() return 0 + 0 ;end)();v72=(function() return nil;end)();v70=(function() return 1 + 0 ;end)();end end end v59[ #"nil"]=(function() return v21();end)();for v74= #"}",v23() do FlatIdent_8199B,Descriptor,v21,v20,v22,v23,v61,v56,v74=(function() return v54(FlatIdent_8199B,Descriptor,v21,v20,v22,v23,v61,v56,v74);end)();end for v75= #">",v23() do v57,v75,v28=(function() return v55(v57,v75,v28);end)();end return v59;end local function v29(v63,v64,v65) local v66=v63[1 + 0 ];local v67=v63[2];local v68=v63[3];return function(...) local v76=v66;local v77=v67;local v78=v68;local v79=v27;local v80=1 + 0 ;local v81= -(530 -(406 + 123));local v82={};local v83={...};local v84=v12("#",...) -(1 + 0 + 0) ;local v85={};local v86={};for v109=0,v84 do if (v109>=v78) then v82[v109-v78 ]=v83[v109 + (1323 -(1249 + 73)) ];else v86[v109]=v83[v109 + 1 + 0 ];end end local v87=(v84-v78) + 1 ;local v88;local v89;while true do local v110=1145 -(466 + 679) ;while true do if (v110==(2 -1)) then if (v89<=((86 + 2) -57)) then if ((v89<=(1915 -(106 + 1794))) or (3377<=903)) then if ((3976>=439) and (v89<=(3 + (15 -11)))) then if (v89<=(1 + (1728 -(1668 + 58)))) then if (v89<=(2 -1)) then if (v89>(0 -(626 -(512 + 114)))) then v86[v88[2]]={};else local v141=114 -(4 + 110) ;local v142;local v143;while true do if (v141==0) then v142=v88[2];v143={};v141=585 -(57 + 527) ;end if (v141==(1428 -(41 + 1386))) then for v310=1, #v85 do local v311=0;local v312;while true do if ((103 -(17 + 86))==v311) then v312=v85[v310];for v339=0 + 0 , #v312 do local v340=0 -0 ;local v341;local v342;local v343;while true do if (v340==0) then v341=v312[v339];v342=v341[2 -1 ];v340=167 -(122 + 44) ;end if ((3752==3752) and (v340==1)) then v343=v341[2 -0 ];if ((4046>2695) and (v342==v86) and (v343>=v142)) then v143[v343]=v342[v343];v341[3 -2 ]=v143;end break;end end end break;end end end break;end end end elseif (v89>(2 + 0)) then do return;end else local v144=0 + 0 ;local v145;while true do if ((0 -0)==v144) then v145=v88[67 -(30 + 35) ];v86[v145]=v86[v145](v13(v86,v145 + 1 + (0 -0) ,v88[1260 -(1043 + 214) ]));break;end end end elseif (v89<=(18 -13)) then if (v89==(1216 -((667 -344) + 889))) then local v146=v88[2];local v147=v86[v88[(24 -17) -4 ]];v86[v146 + 1 ]=v147;v86[v146]=v147[v88[584 -(168 + 193 + 219) ]];else v86[v88[2]]();end elseif (v89==(326 -(53 + 267))) then local v151=0 + 0 + 0 ;local v152;local v153;while true do if (v151==(414 -(15 + 398))) then for v313=983 -(18 + 964) , #v85 do local v314=v85[v313];for v327=0 -(0 + 0) , #v314 do local v328=v314[v327];local v329=v328[1 + 0 ];local v330=v328[2 + 0 ];if ((v329==v86) and (v330>=v152)) then local v335=0 -0 ;while true do if (v335==(850 -(20 + 830))) then v153[v330]=v329[v330];v328[1 + 0 ]=v153;break;end end end end end break;end if ((126 -(116 + 10))==v151) then v152=v88[2];v153={};v151=1 + 0 ;end end else v86[v88[2]]=v65[v88[741 -(542 + 196) ]];end elseif (v89<=(23 -12)) then if (v89<=(3 + 6)) then if (v89>(5 + 3)) then v86[v88[2]]=v86[v88[2 + 1 ]][v88[10 -6 ]];else v65[v88[7 -4 ]]=v86[v88[1553 -(1126 + 425) ]];end elseif (v89==(415 -(118 + 287))) then local v160=0 -0 ;local v161;while true do if ((v160==(1121 -((2112 -(109 + 1885)) + 1003))) or (3545==3197)) then v161=v88[2];v86[v161](v86[v161 + (2 -1) ]);break;end end else v80=v88[380 -(142 + 235) ];end elseif (v89<=(58 -45)) then if (v89>(3 + 9)) then v80=v88[980 -(553 + 424) ];else local v164=0;local v165;while true do if (v164==0) then v165=v88[3 -1 ];v86[v165]=v86[v165](v13(v86,v165 + 1 ,v81));break;end end end elseif (v89>(13 + 1)) then v65[v88[3 + 0 ]]=v86[v88[1471 -(1269 + 200) ]];else v86[v88[2 + 0 ]]=v86[v88[2 + 1 ]] + v86[v88[3 + 1 ]] ;end elseif ((2394>373) and (v89<=(49 -26))) then if (v89<=(52 -33)) then if (v89<=(37 -20)) then if (v89>(5 + 11)) then v86[v88[9 -7 ]][v88[756 -(239 + 514) ]]=v88[(3 -1) + 2 ];else v86[v88[2]]={};end elseif ((4155<=4232) and (v89==(1347 -(797 + 532)))) then local v172=v77[v88[(818 -(98 + 717)) + 0 ]];local v173;local v174={};v173=v10({},{__index=function(v243,v244) local v245=v174[v244];return v245[1 + 0 ][v245[4 -2 ]];end,__newindex=function(v246,v247,v248) local v249=1202 -(373 + 829) ;local v250;while true do if ((v249==(731 -(476 + 255))) or (3581==3473)) then v250=v174[v247];v250[1 -0 ][v250[2]]=v248;break;end end end});for v251=1131 -(369 + 761) ,v88[4] do v80=v80 + 1 + 0 + 0 ;local v252=v76[v80];if (v252[1]==(87 -39)) then v174[v251-(1 -0) ]={v86,v252[3 -0 ]};else v174[v251-(337 -(144 + 192)) ]={v64,v252[3 + 0 ]};end v85[ #v85 + 1 + 0 ]=v174;end v86[v88[1 + (2 -1) ]]=v29(v172,v173,v65);else local v176=v77[v88[1507 -(363 + 1141) ]];local v177;local v178={};v177=v10({},{__index=function(v254,v255) local v256=1580 -(1183 + 397) ;local v257;while true do if (v256==(0 -0)) then v257=v178[v255];return v257[1 + 0 ][v257[2 + 0 ]];end end end,__newindex=function(v258,v259,v260) local v261=1975 -(1913 + 62) ;local v262;while true do if (v261==(0 + 0)) then v262=v178[v259];v262[2 -1 ][v262[1935 -(565 + 1368) ]]=v260;break;end end end});for v263=3 -2 ,v88[1665 -(1477 + 184) ] do v80=v80 + 1 ;local v264=v76[v80];if ((4995>3348) and (v264[1 -0 ]==(45 + 3))) then v178[v263-(857 -(564 + 292)) ]={v86,v264[307 -(244 + 60) ]};else v178[v263-(1 + 0) ]={v64,v264[2 + 1 ]};end v85[ #v85 + (1002 -(938 + 63)) ]=v178;end v86[v88[2]]=v29(v176,v177,v65);end elseif ((v89<=(17 + 4)) or (754>3724)) then if (v89>(1145 -(936 + 189))) then v86[v88[1 + 1 ]]();elseif ((217>=57) and v86[v88[1615 -(1565 + 48) ]]) then v80=v80 + 1 + 0 ;else v80=v88[1141 -(782 + 356) ];end elseif (v89>(1455 -(797 + 636))) then for v266=v88[269 -(176 + 91) ],v88[(33 -26) -(1623 -(1427 + 192)) ] do v86[v266]=nil;end else v86[v88[(1 + 1) -0 ]][v88[1095 -(975 + 117) ]]=v86[v88[1879 -((364 -207) + 1718) ]];end elseif (v89<=(22 + 5)) then if ((v89<=(88 -63)) or (2070>=4037)) then if (v89>(81 -57)) then v86[v88[1020 -(697 + 321) ]]=v88[7 -(4 + 0) ]~=(0 -0) ;else local v183=0 -0 ;local v184;local v185;while true do if (v183==0) then v184=v88[1 + 1 + 1 ];v185=v86[v184];v183=1 -0 ;end if (v183==(2 -(327 -(192 + 134)))) then for v320=v184 + (1228 -(322 + 905)) ,v88[615 -(602 + 9) ] do v185=v185   .. v86[v320] ;end v86[v88[1191 -(449 + 740) ]]=v185;break;end end end elseif (v89>26) then v86[v88[874 -(826 + (1322 -(316 + 960))) ]]=v64[v88[950 -(137 + 108 + 702) ]];else v86[v88[6 -4 ]][v88[1 + 2 ]]=v86[v88[1902 -(260 + 1638) ]];end elseif ((2705==2705) and (v89<=(469 -(382 + 45 + 13)))) then if (v89>(89 -61)) then v86[v88[2 + 0 + 0 ]]=v88[(18 -13) -2 ];else v86[v88[2]][v88[8 -5 ]]=v88[1209 -(902 + 303) ];end elseif ((61==61) and (v89>(65 -(586 -(83 + 468))))) then if (v88[4 -2 ]==v86[v88[1 + 3 ]]) then v80=v80 + (1691 -(1121 + 569)) ;else v80=v88[3];end else v86[v88[216 -(22 + 192) ]]=v29(v77[v88[686 -(483 + 200) ]],nil,v65);end elseif ((v89<=(1510 -(1404 + 59))) or (699>=1296)) then if ((v89<=(106 -(1873 -(1202 + 604)))) or (1783>=3616)) then if ((v89<=((219 -172) -12)) or (3913>4527)) then if ((4376>817) and (v89<=(798 -(468 + 297)))) then if ((4861>824) and (v89==32)) then local v195=562 -(334 + 228) ;local v196;while true do if (v195==((0 -0) -0)) then v196=v88[4 -(5 -3) ];v86[v196](v86[v196 + (1 -0) ]);break;end end elseif ((v88[2]<v86[v88[4]]) or (1383>=2131)) then v80=v80 + 1 + 0 ;else v80=v88[239 -(141 + 95) ];end elseif (v89==(34 + 0)) then v86[v88[2]]=v88[7 -4 ];else local v199=v88[4 -2 ];v86[v199]=v86[v199](v13(v86,v199 + 1 + 0 ,v88[8 -5 ]));end elseif (v89<=(27 + 10)) then if (v89>(19 + 17)) then v86[v88[2 -0 ]]=v29(v77[v88[(327 -(45 + 280)) + 1 ]],nil,v65);elseif (v86[v88[2]]==v88[(162 + 5) -(92 + 71) ]) then v80=v80 + 1 + 0 ;else v80=v88[2 + 1 ];end elseif (v89==38) then local v202=(0 + 0) -0 ;local v203;local v204;while true do if (v202==(765 -(574 + 191))) then v203=v88[2 + 0 ];v204=v86[v88[7 -4 ]];v202=1 + 0 + 0 ;end if (v202==1) then v86[v203 + (850 -(254 + 595)) ]=v204;v86[v203]=v204[v88[130 -(55 + 71) ]];break;end end elseif ((v88[2]<v86[v88[5 -1 ]]) or (1876>=2541)) then v80=v80 + 1 ;else v80=v88[1793 -(573 + 1217) ];end elseif ((1782<=3772) and (v89<=(119 -76))) then if (v89<=(4 + 37)) then if (v89==(64 -24)) then v86[v88[941 -(714 + 225) ]]=v65[v88[8 -5 ]];else local v207=(0 + 0) -0 ;local v208;while true do if (v207==(0 + 0)) then v208=v88[2 -0 ];v86[v208]=v86[v208]();break;end end end elseif (v89>(848 -(118 + 688))) then local v209=v88[2];v86[v209](v13(v86,v209 + ((90 -41) -((1936 -(340 + 1571)) + 23)) ,v88[3]));else for v268=v88[1 + 1 ],v88[3] do v86[v268]=nil;end end elseif (v89<=45) then if (v89==(1930 -(366 + 561 + 959))) then local v210=0 -0 ;local v211;local v212;local v213;local v214;while true do if ((732 -(16 + 716))==v210) then v211=v88[3 -1 ];v212,v213=v79(v86[v211](v13(v86,v211 + (98 -(11 + 86)) ,v88[1775 -(1733 + 39) ])));v210=1;end if (v210==(4 -(5 -3))) then for v321=v211,v81 do local v322=285 -((1209 -(125 + 909)) + 110) ;while true do if (v322==(0 -0)) then v214=v214 + 1 ;v86[v321]=v212[v214];break;end end end break;end if ((v210==(4 -3)) or (4700<813)) then v81=(v213 + v211) -1 ;v214=1796 -(503 + 1293) ;v210=5 -3 ;end end elseif ((3199<4050) and v86[v88[2 + 0 ]]) then v80=v80 + (1062 -(810 + 251)) ;else v80=v88[3 + 0 ];end elseif ((v89>(15 + 31)) or (4951<4430)) then v86[v88[(1950 -(1096 + 852)) + 0 + 0 ]]=v86[v88[536 -(43 + 490) ]]/v88[(1052 -315) -(711 + 22) ] ;else local v216=0;local v217;local v218;while true do if ((0 -0)==v216) then v217=v88[862 -(240 + 619) ];v218=v86[v217];v216=1 + 0 ;end if (((1 + 0) -0)==v216) then for v323=v217 + 1 + 0 ,v88[(2260 -(409 + 103)) -(1344 + 400) ] do v218=v218   .. v86[v323] ;end v86[v88[407 -(255 + 150) ]]=v218;break;end end end elseif ((96==96) and (v89<=55)) then if ((v89<=(41 + 10)) or (2739>4008)) then if ((v89<=(27 + 22)) or (23==1134)) then if ((v89>(205 -157)) or (2693>=4111)) then v86[v88[238 -(46 + 190) ]]=v86[v88[(104 -(51 + 44)) -6 ]][v88[1743 -(404 + 1335) ]];else v86[v88[1 + 1 ]]=v86[v88[409 -(183 + (1540 -(1114 + 203))) ]];end elseif (v89==(60 -10)) then v86[v88[2 + 0 ]]=v64[v88[2 + (727 -(228 + 498)) ]];else v86[v88[339 -(10 + 327) ]]=v86[v88[3 + 0 ]];end elseif (v89<=(391 -(118 + 220))) then if (v89>(4 + 14 + 34)) then v86[v88[2]]=v86[v88[452 -(60 + 48 + 341) ]] * v86[v88[2 + 2 ]] ;else do return;end end elseif (v89>(228 -174)) then if (v88[1495 -((1374 -(174 + 489)) + 782) ]==v86[v88[4]]) then v80=v80 + (1 -0) ;else v80=v88[3];end else v86[v88[(1227 -756) -(270 + 199) ]]=v86[v88[3]] + v86[v88[2 + 2 ]] ;end elseif ((v89<=59) or (4316<=2146)) then if (v89<=(1876 -(580 + 1239))) then if (v89>(166 -110)) then v86[v88[2]]=v86[v88[(1908 -(830 + 1075)) + 0 ]]/v88[528 -(303 + 221) ] ;else v86[v88[1 + 1 ]]=v88[3]~=0 ;end elseif (v89==(26 + 32)) then local v231=(1269 -(231 + 1038)) -0 ;local v232;while true do if (v231==0) then v232=v88[2];v86[v232]=v86[v232]();break;end end elseif (v86[v88[2 + 0 + 0 ]]==v88[1166 -(171 + 991) ]) then v80=v80 + (1168 -(645 + 522)) ;else v80=v88[1793 -(1010 + 780) ];end elseif (v89<=((251 -190) + 0)) then if (v89==(285 -225)) then local v233=v88[5 -3 ];v86[v233](v13(v86,v233 + (1837 -(1045 + 791)) ,v88[7 -4 ]));else local v234=v88[2 -0 ];v86[v234]=v86[v234](v13(v86,v234 + (506 -(351 + 154)) ,v81));end elseif (v89==(166 -104)) then local v236=1574 -(1281 + 293) ;local v237;local v238;local v239;local v240;while true do if ((v236==(268 -(28 + 238))) or (3546<=2809)) then for v324=v237,v81 do v240=v240 + (2 -1) ;v86[v324]=v238[v240];end break;end if ((4904>2166) and (v236==(1559 -(1381 + 178)))) then v237=v88[2 + 0 ];v238,v239=v79(v86[v237](v13(v86,v237 + 1 + 0 ,v88[2 + 1 ])));v236=3 -2 ;end if ((109>=90) and (v236==(1 + 0))) then v81=(v239 + v237) -(471 -(381 + 89)) ;v240=0;v236=2;end end else v86[v88[2 + (0 -0) ]]=v86[v88[3 + 0 + 0 ]] * v86[v88[6 -2 ]] ;end v80=v80 + (1157 -((3764 -2690) + 82)) ;break;end if ((4978>2905) and (v110==(0 -0))) then v88=v76[v80];v89=v88[1785 -(214 + 1570) ];v110=1456 -(990 + 465) ;end end end end;end return v29(v28(),{},v17)(...);end return v15("LOL!6A3Q00030A3Q006C6F6164737472696E6703043Q0067616D6503073Q00482Q747047657403493Q00682Q7470733A2Q2F6769746875622E636F6D2F64617769642D736372697074732F466C75656E742F72656C65617365732F6C61746573742F646F776E6C6F61642F6D61696E2E6C756103543Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F64617769642D736372697074732F466C75656E742F6D61737465722F412Q646F6E732F536176654D616E616765722E6C756103593Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F64617769642D736372697074732F466C75656E742F6D61737465722F412Q646F6E732F496E746572666163654D616E616765722E6C756103093Q0073656E646E6F746966030C3Q0043726561746557696E646F7703053Q005469746C6503123Q0054686520537572766976616C2047616D652003073Q0056657273696F6E03083Q005375625469746C65030A3Q00627920476C617571756503083Q005461625769647468026Q00644003043Q0053697A6503053Q005544696D32030A3Q0066726F6D4F2Q66736574025Q00208240025Q00C07C4003073Q00416372796C6963010003053Q005468656D6503063Q004461726B6572030B3Q004D696E696D697A654B657903043Q00456E756D03073Q004B6579436F6465030B3Q004C656674436F6E74726F6C03043Q00486F6D6503063Q00412Q6454616203043Q0049636F6E03043Q00686F6D6503063Q00506C6179657203043Q007573657203083Q0053652Q74696E677303083Q0073652Q74696E677303073Q004F7074696F6E73028Q00027Q0040026Q00F03F030F3Q0053702Q65644D756C7469706C696572029A5Q99B93F026Q000840030A3Q004765745365727669636503103Q0055736572496E70757453657276696365030A3Q0052756E5365727669636503043Q007761697403093Q0043686172616374657203073Q00506C6179657273030B3Q004C6F63616C506C61796572026Q00104003073Q005374652Q70656403073Q00436F2Q6E65637403093Q00412Q64536C6964657203053Q0053702Q6564030B3Q004465736372697074696F6E034Q0003073Q0044656661756C742Q033Q004D696E2Q033Q004D6178025Q0080454003083Q00526F756E64696E6703083Q0043612Q6C6261636B03093Q00412Q64546F2Q676C65030B3Q00546F2Q676C655F5374616D03103Q00496E66696E697465205374616D696E61026Q00144003093Q004F6E4368616E67656403083Q0053657456616C7565030A3Q00546F2Q676C655F426167030C3Q00496E66696E69746520426167026Q001840026Q002040030A3Q00412Q6453656374696F6E03053Q00457874726103083Q00737061776E706F73030E3Q00537061776E20506F736974696F6E026Q00224003063Q00536C69646572030B3Q005A2Q6F6D20416D6F756E74026Q006040025Q0088B340026Q001C40030B3Q00546F2Q676C655F46612Q6C030E3Q004E6F2046612Q6C2044616D61676503083Q00492Q6D756E69747903083Q004D6F76656D656E74030B3Q00496E666F726D6174696F6E030C3Q00412Q6450617261677261706803153Q00466F722041686D65642C20627920596F752Q73656603073Q00436F6E74656E7403353Q000A54686973207375636B732062757420796561682C2069742773207374692Q6C2062652Q746572207468616E206E6F7468696E672E030A3Q005365744C69627261727903133Q0049676E6F72655468656D6553652Q74696E677303103Q0053657449676E6F7265496E646578657303093Q00536574466F6C646572030F3Q00466C75656E74536372697074487562031D3Q00466C75656E745363726970744875622F73706563696669632D67616D6503153Q004275696C64496E7465726661636553656374696F6E03123Q004275696C64436F6E66696753656374696F6E03093Q0053656C65637454616203063Q004E6F7469667903093Q006368616F732E6C7561031B3Q00546865207363726970742068617320622Q656E206C6F616465642103083Q004475726174696F6E03123Q004C6F61644175746F6C6F6164436F6E6669670047012Q0012073Q00013Q001207000100023Q002026000100010003001222000300044Q003E000100034Q000C5Q00022Q00293Q00010002001207000100013Q001207000200023Q002026000200020003001222000400054Q003E000200044Q000C00013Q00022Q0029000100010002001207000200013Q001207000300023Q002026000300030003001222000500064Q003E000300054Q000C00023Q00022Q002900020001000200022500035Q00120F000300073Q00202600033Q00082Q000100053Q00070012220006000A3Q00203100073Q000B2Q001800060006000700101600050009000600301C0005000C000D00301C0005000E000F001207000600113Q002031000600060012001222000700133Q001222000800144Q000200060008000200101600050010000600301C00050015001600301C0005001700180012070006001A3Q00203100060006001B00203100060006001C0010160005001900062Q00020003000500022Q000100043Q000300202600050003001E2Q000100073Q000200301C00070009001D00301C0007001F00202Q00020005000700020010160004001D000500202600050003001E2Q000100073Q000200301C00070009002100301C0007001F00222Q000200050007000200101600040021000500202600050003001E2Q000100073Q000200301C00070009002300301C0007001F00242Q000200050007000200101600040023000500203100053Q0025001222000600264Q0017000700163Q002624000600590001002700040B3Q00590001001222001700263Q000E370028004B0001001700040B3Q004B00010012220018002A3Q00120F001800293Q0012220006002B3Q00040B3Q00590001002624001700450001002600040B3Q00450001001207001800023Q00202600180018002C001222001A002D4Q00020018001A00022Q0033000B00183Q001207001800023Q00202600180018002C001222001A002E4Q00020018001A00022Q0033000C00183Q001222001700283Q00040B3Q004500010026240006006F0001002800040B3Q006F0001001222001700263Q002624001700650001002800040B3Q006500010012070018002F4Q00150018000100010020310018000A00300006140018005E00013Q00040B3Q005E0001001222000600273Q00040B3Q006F00010026240017005C0001002600040B3Q005C0001001207001800023Q00202600180018002C001222001A00314Q00020018001A00022Q0033000900183Q002031000A00090032001222001700283Q00040B3Q005C00010026240006008C0001003300040B3Q008C00010020310017000C003400202600170017003500061300190001000100012Q00303Q000E4Q003C001700190001002026001700080036001222001900374Q0001001A3Q000700301C001A0009003700301C001A0038003900301C001A003A002600301C001A003B002600301C001A003C003D00301C001A003E0026000225001B00023Q001016001A003F001B2Q00020017001A00022Q0033000F00173Q002031001700040021002026001700170040001222001900414Q0001001A3Q000200301C001A0009004200301C001A003A00162Q00020017001A00022Q0033001000173Q001222000600433Q0026240006009F0001004300040B3Q009F000100202600170010004400061300190003000100012Q00303Q00054Q003C0017001900010020310017000500410020260017001700452Q003800196Q003C001700190001002031001700040021002026001700170040001222001900464Q0001001A3Q000200301C001A0009004700301C001A003A00162Q00020017001A00022Q0033001100173Q001222000600483Q000E37004900BB0001000600040B3Q00BB0001001222001700263Q002624001700B20001002600040B3Q00B2000100203100180004002100202600180018004A001222001A004B4Q00020018001A00022Q0033001400183Q002031001800040021002026001800180040001222001A004C4Q0001001B3Q000200301C001B0009004D00301C001B003A00162Q00020018001B00022Q0033001500183Q001222001700283Q002624001700A20001002800040B3Q00A20001002026001800150044000613001A0004000100012Q00303Q00054Q003C0018001A00010012220006004E3Q00040B3Q00BB000100040B3Q00A20001002624000600D30001004E00040B3Q00D3000100203100170005004C0020260017001700452Q003800196Q003C0017001900010020310017000400210020260017001700360012220019004F4Q0001001A3Q000700301C001A0009005000301C001A0038003900301C001A003A005100301C001A003B005100301C001A003C005200301C001A003E0026000225001B00053Q001016001A003F001B2Q00020017001A00022Q0033001600173Q002026001700160045001222001900514Q003C00170019000100040B3Q00222Q01002624000600EE0001005300040B3Q00EE0001001222001700263Q002624001700DE0001002800040B3Q00DE00010020310018000500540020260018001800452Q0038001A6Q003C0018001A0001001222000600493Q00040B3Q00EE0001002624001700D60001002600040B3Q00D60001002031001800040021002026001800180040001222001A00544Q0001001B3Q000200301C001B0009005500301C001B003A00162Q00020018001B00022Q0033001300183Q002026001800130044000613001A0006000100012Q00303Q00054Q003C0018001A0001001222001700283Q00040B3Q00D60001002624000600FE0001004800040B3Q00FE000100202600170011004400061300190007000100012Q00303Q00054Q003C0017001900010020310017000500460020260017001700452Q003800196Q003C00170019000100203100170004002100202600170017004A001222001900564Q00020017001900022Q0033001200173Q001222000600533Q002624000600192Q01002600040B3Q00192Q01001222001700263Q0026240017000A2Q01002800040B3Q000A2Q0100203100180004002100202600180018004A001222001A00574Q00020018001A00022Q0033000800183Q001222000600283Q00040B3Q00192Q010026240017003Q01002600040B3Q003Q0100203100180004001D00202600180018004A001222001A00584Q00020018001A00022Q0033000700183Q00203100180004001D0020260018001800592Q0001001A3Q000200301C001A0009005A00301C001A005B005C2Q003C0018001A0001001222001700283Q00040B3Q003Q01002624000600420001002B00040B3Q00420001001222000D003D4Q0017000E000E3Q000613000E0008000100022Q00303Q000D4Q00303Q000A3Q001222000600333Q00040B3Q004200012Q000600065Q00202600060001005D2Q003300086Q003C00060008000100202600060002005D2Q003300086Q003C00060008000100202600060001005E2Q000A00060002000100202600060001005F2Q000100086Q003C000600080001002026000600020060001222000800614Q003C000600080001002026000600010060001222000800624Q003C0006000800010020260006000200630020310008000400232Q003C0006000800010020260006000100640020310008000400232Q003C000600080001002026000600030065001222000800284Q003C00060008000100202600063Q00662Q000100083Q000300301C00080009006700301C0008005B006800301C0008006900282Q003C00060008000100202600060001006A2Q000A0006000200012Q00068Q00343Q00013Q00093Q000A3Q0003043Q0067616D65030A3Q005374617274657247756903073Q00536574436F726503103Q0053656E644E6F74696669636174696F6E03053Q005469746C6503043Q005465787403043Q0049636F6E03183Q00726278612Q73657469643A2Q2F313233313935313037353103083Q004475726174696F6E026Q000840020B3Q001207000200013Q002031000200020002002026000200020003001222000400044Q000100053Q0004001016000500053Q00101600050006000100301C00050007000800301C00050009000A2Q003C0002000500012Q00343Q00017Q00023Q00030F3Q0053702Q65644D756C7469706C696572029Q00063Q0012073Q00013Q000E270002000500013Q00040B3Q000500012Q00328Q00153Q000100012Q00343Q00017Q00023Q00030F3Q0053702Q65644D756C7469706C696572026Q00594001033Q00203900013Q000200120F000100014Q00343Q00017Q00083Q0003043Q0067616D6503073Q00506C6179657273030B3Q004C6F63616C506C6179657203093Q0043686172616374657203073Q007374616D696E6103083Q0044697361626C6564030B3Q00546F2Q676C655F5374616D03053Q0056616C7565000A3Q0012073Q00013Q0020315Q00020020315Q00030020315Q00040020315Q00052Q003200015Q0020310001000100070020310001000100080010163Q000600012Q00343Q00017Q00073Q0003043Q0067616D6503073Q00506C6179657273030B3Q004C6F63616C506C61796572030C3Q00536574412Q7472696275746503113Q005069636B537061776E506F736974696F6E03083Q00737061776E706F7303053Q0056616C7565000A3Q0012073Q00013Q0020315Q00020020315Q00030020265Q0004001222000200054Q003200035Q0020310003000300060020310003000300072Q003C3Q000300012Q00343Q00017Q00043Q0003043Q0067616D6503073Q00506C6179657273030B3Q004C6F63616C506C6179657203153Q0043616D6572614D61785A2Q6F6D44697374616E636501053Q001207000100013Q002031000100010002002031000100010003001016000100044Q00343Q00017Q00083Q0003043Q0067616D6503073Q00506C6179657273030B3Q004C6F63616C506C6179657203093Q00436861726163746572030A3Q0066612Q6C44616D61676503083Q0044697361626C6564030B3Q00546F2Q676C655F46612Q6C03053Q0056616C7565000A3Q0012073Q00013Q0020315Q00020020315Q00030020315Q00040020315Q00052Q003200015Q0020310001000100070020310001000100080010163Q000600012Q00343Q00017Q00073Q0003043Q0067616D6503073Q00506C6179657273030B3Q004C6F63616C506C61796572030C3Q00536574412Q74726962757465030B3Q00496E66696E697465426167030A3Q00546F2Q676C655F42616703053Q0056616C7565000A3Q0012073Q00013Q0020315Q00020020315Q00030020265Q0004001222000200054Q003200035Q0020310003000300060020310003000300072Q003C3Q000300012Q00343Q00017Q00093Q00028Q0003043Q006D6174682Q033Q006D696E030F3Q0053702Q65644D756C7469706C69657203093Q0043686172616374657203103Q0048756D616E6F6964522Q6F745061727403063Q00434672616D6503083Q0048756D616E6F6964030D3Q004D6F7665446972656374696F6E001B3Q0012223Q00014Q0017000100013Q0026243Q00020001000100040B3Q00020001001207000200023Q002031000200020003001207000300044Q003200046Q00020002000400022Q0033000100024Q0032000200013Q0020310002000200050020310002000200062Q0032000300013Q0020310003000300050020310003000300060020310003000300072Q0032000400013Q0020310004000400050020310004000400080020310004000400092Q00350004000400012Q003600030003000400101600020007000300040B3Q001A000100040B3Q000200012Q00343Q00017Q00",v9(),...);
+local Window = Fluent:CreateWindow({
+    Title = "The Survival Game " .. Fluent.Version,
+    SubTitle = "by Glauque",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+
+--// Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Home = Window:AddTab({ Title = "Home", Icon = "home" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "user" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+
+    --// Home ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local InfoSection = Tabs.Home:AddSection("Information") -- Section
+
+    Tabs.Home:AddParagraph({
+        Title = "For Ahmed, by Youssef",
+        Content = "\nThis sucks but yeah, it's still better than nothing."
+    })
+
+    --// Player -------------------------------------------------------------------------------------------------------------------------------------------------
+
+    -------------------------------------- Movement Section --------------------------------------
+    
+    local MovementSection = Tabs.Player:AddSection("Movement") -- Section
+    
+    ------ CFrame Speed
+    
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+    repeat
+        wait()
+    until LocalPlayer.Character
+
+    local UserInputService = game:GetService("UserInputService")
+    local RunService = game:GetService("RunService")
+
+    SpeedMultiplier = 0.1
+    local maxSpeed = 43
+
+    local function updateCFrameSpeed()
+        local speedValue = math.min(SpeedMultiplier, maxSpeed)
+        LocalPlayer.Character.HumanoidRootPart.CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame + LocalPlayer.Character.Humanoid.MoveDirection * speedValue
+    end
+
+    RunService.Stepped:Connect(function()
+        if SpeedMultiplier > 0 then
+            updateCFrameSpeed()
+        end
+    end)
+
+    local CFrameSlider = MovementSection:AddSlider("Speed", {
+        Title = "Speed",
+        Description = "",
+        Default = 0,
+        Min = 0,
+        Max = 43,
+        Rounding = 0,
+        Callback = function(value)
+            SpeedMultiplier = value / 100
+        end
+    })
+
+    ------ Infinite Stamina
+
+    local StamToggle = Tabs.Player:AddToggle("Toggle_Stam", {Title = "Infinite Stamina", Default = false })
+
+    StamToggle:OnChanged(function()
+        game.Players.LocalPlayer.Character.stamina.Disabled = Options.Toggle_Stam.Value
+    end)
+
+    Options.Toggle_Stam:SetValue(false) -- Default value
+
+    ------ Infinite Bag
+    
+    local BagToggle = Tabs.Player:AddToggle("Toggle_Bag", {Title = "Infinite Bag", Default = false })
+
+    BagToggle:OnChanged(function()
+        game.Players.LocalPlayer:SetAttribute("InfiniteBag", Options.Toggle_Bag.Value)       
+    end)
+
+    Options.Toggle_Bag:SetValue(false)
+
+    -------------------------------------- Immunity Section --------------------------------------
+    
+    local ImmunitySection = Tabs.Player:AddSection("Immunity") -- Section
+
+    ------ No Fall Damage
+
+    local FallToggle = Tabs.Player:AddToggle("Toggle_Fall", {Title = "No Fall Damage", Default = false })
+
+    FallToggle:OnChanged(function()
+        game.Players.LocalPlayer.Character.fallDamage.Disabled = Options.Toggle_Fall.Value
+    end)
+
+    Options.Toggle_Fall:SetValue(false) -- Default value
+
+    -------------------------------------- Extra Section --------------------------------------
+
+    local ExtraSection = Tabs.Player:AddSection("Extra") -- Section
+
+    ------ Spawn Position
+    
+    local SpawnPosToggle = Tabs.Player:AddToggle("spawnpos", {Title = "Spawn Position", Default = false })
+
+    SpawnPosToggle:OnChanged(function()
+        game.Players.LocalPlayer:SetAttribute("PickSpawnPosition", Options.spawnpos.Value)
+    end)
+
+    Options.spawnpos:SetValue(false)
+
+    ------ Maximum Zoom Amount
+    
+    local ZoomSlider = Tabs.Player:AddSlider("Slider", {
+        Title = "Zoom Amount",
+        Description = "",
+        Default = 128,
+        Min = 128,
+        Max = 5000,
+        Rounding = 0,
+        Callback = function(Value)
+            game.Players.LocalPlayer.CameraMaxZoomDistance = Value
+        end
+    })
+
+    ZoomSlider:SetValue(128)
+
+    --// Always Day --------------------------------------------------------------------------------------------------------------------------------------------------
+
+    ------ Work Part
+
+    game.Players.LocalPlayer.PlayerScripts.dayNightEffects.Disabled = true
+    game.StarterPlayer.StarterPlayerScripts.dayNightEffects.Disabled = true
+    game.Lighting.day.Value = true
+    game.Lighting.lightingDay.Value = true
+
+end
+
+--// Don't Touch -------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (We dont want configs to save themes, do we ?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- Use case for doing it this way:
+-- A script hub could have themes in a global folder
+-- And game configs in a separate folder per game
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "chaos.lua",
+    Content = "The script has been loaded!",
+    Duration = 1
+})
+
+SaveManager:LoadAutoloadConfig()
